@@ -1,0 +1,51 @@
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>jQuery AJAX</Title>
+    <Author>Brian Lachniet</Author>
+    <Shortcut>jquery_ajax</Shortcut>
+    <Description>Code snippet for a jQuery ajax call.</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>type</ID>
+        <ToolTip>The type of ajax call ('get', 'post')</ToolTip>
+        <Default>post</Default>
+      </Literal>
+      <Literal>
+        <ID>url</ID>
+        <ToolTip>The url for the ajax call to target. You can also use Razor syntax here: '@Url.Action("AddUser")'</ToolTip>
+        <Default>http://google.com</Default>
+      </Literal>
+      <Literal>
+        <ID>data</ID>
+        <ToolTip>The data to pass in the body of the request. This can be json, xml, or something else.</ToolTip>
+        <Default>jsonObject</Default>
+      </Literal>
+      <Literal>
+        <ID>data-type</ID>
+        <ToolTip>The type of data being passed in the body of the request.</ToolTip>
+        <Default>application/json</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="JavaScript">
+      <![CDATA[$$.ajax({
+                type: '$type$',
+                url: '$url$',
+                data: $data$,
+                contentType: '$data-type$',
+                complete: function (data)
+                {
+                    // Handle a completed request here.
+                },
+                error: function(data)
+                {
+                    // Handle a failed request here.
+                }
+            });]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>
