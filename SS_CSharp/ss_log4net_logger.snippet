@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>SS Log4Net Logger</Title>
+    <Author>Brian Lachniet</Author>
+    <Shortcut>ss_log4net_logger</Shortcut>
+    <Description>Creates a logger for the current class.</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[private static readonly log4net.ILog _log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>
