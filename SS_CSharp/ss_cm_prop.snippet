@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.1.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>SS Caliburn.Micro Property</Title>
+    <Author>Brian Lachniet</Author>
+    <Shortcut>ss_cm_prop</Shortcut>
+    <Description>Creates a property that call NotifyOfPropertyChange() in the set.</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>Type</ID>
+        <ToolTip>The property type.</ToolTip>
+        <Default>int</Default>
+      </Literal>
+      <Literal>
+        <ID>PrivateMember</ID>
+        <ToolTip>The name of the private member.</ToolTip>
+        <Default>_property</Default>
+      </Literal>
+      <Literal>
+        <ID>PublicProp</ID>
+        <ToolTip>The name of the public property.</ToolTip>
+        <Default>Property</Default>
+      </Literal>
+    </Declarations>
+    <Code Language="CSharp">
+      <![CDATA[private $Type$ $PrivateMember$;
+        public $Type$ $PublicProp$
+        {
+            get { return $PrivateMember$; }
+            set { $PrivateMember$ = value; NotifyOfPropertyChange(() => $PublicProp$); }
+        }
+        $end$]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>
